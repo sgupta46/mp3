@@ -6,14 +6,12 @@ app.controller('listController', ['$scope', '$http', function($scope, $http) {
       }).error(function (error) {
           console.log(error);
       })
-
       $scope.sortUpDown = "+";
       $scope.sortBy = "title";
       $scope.sortOrder = $scope.sortUpDown + $scope.sortBy;
       $scope.sort = function() {
         $scope.sortOrder = $scope.sortUpDown + $scope.sortBy;
       }
-
     }
 ]);
 
@@ -25,9 +23,18 @@ app.controller('galleryController', ['$scope', '$http', function($scope, $http) 
     }).error(function (error) {
         console.log(error);
     });
+    var selected = 0;
     $scope.filterGenre = '';
     $scope.changeGenre = function(x) {
-            $scope.filterGenre = x === 'All' ? '' : x;
+            if (x === 'All'){
+              $scope.filterGenre = ''
+            }else if(selected == 1){
+              $scope.filterGenre = '';
+              selected = 0;
+            }else{
+              selected = 1;
+              $scope.filterGenre = x;
+            }
     }
 }]);
 

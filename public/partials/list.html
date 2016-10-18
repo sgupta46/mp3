@@ -1,5 +1,5 @@
 <div id="list">
-	<div class="options">
+	<div class="list_menu">
       <select ng-model="sortBy" ng-change="sort()">
         <optgroup label="Sort Movies By">
           <option value="rank">Rank </option>
@@ -11,8 +11,8 @@
 			<div class="buttons">
 				<a class="button" ng-click="clear()">Clear</a>
 			</div>
-			<input type="radio" name="order" value="-" ng-model="sortUpDown" ng-change="sort()"> Descending
       <input type="radio" name="order" value="+" ng-model="sortUpDown" ng-change="sort()"> Ascending
+			<input type="radio" name="order" value="-" ng-model="sortUpDown" ng-change="sort()"> Descending
 	</div>
 
 

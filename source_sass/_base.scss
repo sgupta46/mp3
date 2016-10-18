@@ -21,10 +21,22 @@ li.thumbs {
     vertical-align: top;
 }
 
-top-bar.ul {
+nav.top-bar {
   li{
     @include center;
   }
+}
+
+.MoviesList {
+    @include center;
+    img {
+      max-height: 150px;
+    }
+}
+
+.list_menu {
+  @include center;
+
 }
 
 img.thumb {
@@ -37,20 +49,38 @@ img.thumb {
 .imgdetail {
     @include center();
     img {
-      max-height: 250px;
+      max-height: 500px;
     }
 }
 
 .textdetail {
     @include center();
+    font-size: x-small;
 }
 
 .arrows {
-      font-size: 4vh;
-      margin-left: 30px;
-      margin-right: 30px;
+	float: right;
 }
 
+.left-arrow, .right-arrow {
+	padding-left: 10px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	cursor: pointer;
+	background-color: transparentize($white, 0.2);
+	color: $black;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.right-arrow {
+	padding-left: 15px;
+	padding-right: 10px;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+	background-color: $white;
+}
 .buttons
 {
   @include center();
