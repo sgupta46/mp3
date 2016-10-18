@@ -1,0 +1,35 @@
+<div #id="details">
+
+	<div class="row">
+		<div class="small-6 small-centered columns detailsContainer">
+
+			<div class="arrows">
+				<a href="#/details/{{prev[0].imdbID}}"> <span class="fa fa-angle-left fa-arrow-left"></span> </a>
+				<a href="#/details/{{next[0].imdbID}}"> <span class="fa fa-angle-right fa-arrow-right"></span> </a>
+			</div>
+
+			<div class="imgdetail">
+				<img ng-src="./data/images/{{movie[0].imdbID}}.jpg" alt="{{movie[0].title}}" />
+			</div>
+
+			<div class="textdetails">
+				<h4> {{movie[0].title}} </h4>
+				<br>
+				Rank: {{movie[0].rank}}
+				<br>
+				IMDB Rating: {{movie[0].imdbRating}}
+				<br>
+				Rated: {{movie[0].rated}}
+				<br>
+				Runtime: {{movie[0].runtime}}
+				<br>
+				Released: {{movie[0].released}}
+				<br>
+				Awards: {{movie[0].awards}}
+				<br>
+				Plot: {{movie[0].plot}}
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,1 +1,7 @@
 // Insert your mixins
+
+@mixin center()
+{
+    margin     : 0 auto;
+    text-align : center;
+}

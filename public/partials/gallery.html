@@ -1,0 +1,16 @@
+<h6>
+  <ul class="filters">
+      <li ng-repeat="genre in genres" ng-click="changeGenre(genre)">
+          <a>
+            {{genre}}
+          </a>
+      </li>
+  </ul>
+</h6>
+<ul class="movies">
+    <li ng-repeat="movie in movieDat | filter: {genre: filterGenre} | orderBy: '+rank'" class="thumbs">
+        <a href="#/details/{{movie.imdbID}}" class="thumb">
+            <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}" class="thumb">
+        </a>
+    </li>
+</ul>

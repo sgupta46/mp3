@@ -1,0 +1,29 @@
+<div id="list">
+	<div class="options">
+      <select ng-model="sortBy" ng-change="sort()">
+        <optgroup label="Sort Movies By">
+          <option value="rank">Rank </option>
+          <option value="title">Title</option>
+        </optgroup>
+      </select>
+			<input id="input" placeholder="Search" ng-model="query" />
+			</br>
+			<div class="buttons">
+				<a class="button" ng-click="clear()">Clear</a>
+			</div>
+			<input type="radio" name="order" value="-" ng-model="sortUpDown" ng-change="sort()"> Descending
+      <input type="radio" name="order" value="+" ng-model="sortUpDown" ng-change="sort()"> Ascending
+	</div>
+
+
+	<ul class="MoviesList">
+
+	  <li ng-repeat="movie in movieDat | filter: query | orderBy: sortOrder">
+				<a href="#/details/{{movie.imdbID}}">
+          <img src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}"/>
+
+        </a>
+				<div class="listText"> {{ movie.title }} <br> Rank: {{movie.rank}} <br> IMDB Rating: {{movie.imdbRating}}</div>
+	  </li>
+	</ul>
+</div>
